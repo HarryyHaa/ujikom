@@ -17,4 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['prefix' => 'backend'], function () {
+    Route::get('user', function () {
+        return view('backend.home');
+    });
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
